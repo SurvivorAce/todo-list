@@ -5,7 +5,7 @@
 
 	include('connect.php');
 
-	$mysqli = new mysqli('localhost'. 'root', 'root', 'tasks');
+	$mysqli = new mysqli('localhost'. 'root', 'root', 'todo');
 	$mysqli ->query("INSERT INTO tasks VALUES('', '$task', '$date', '$time')");
 
 	$query = "SELECT * FROM tasks WHERE task='$task and date='$date' and time='$time'";
@@ -20,5 +20,5 @@
 	$mysqli->close();
 
 	echo '<li><span>' .$task_name. '</span><img id="' .$task_id.'" class="delete-button" width="10px" src="image/close.svg" /></li';
-	
+
 ?>
